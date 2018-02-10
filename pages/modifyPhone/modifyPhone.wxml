@@ -1,0 +1,17 @@
+<view class='allContain'>
+  <view class='item'>
+    <view class='inputContain'>
+      <label class='lableName'>新手机号:</label><input placeholder-class="phcolor" class='nameEntry' type='number' placeholder='请输入修改后的手机号'  confirm-type="send" bindinput="acceptValue" value='{{phoneValue}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='inputContain' style=''>
+      <label class='lableName'>验证码:</label><input placeholder-class="phcolor" class='nameEntry' type='number' placeholder='请输入四位验证码' bindinput="acceptValidate" value='{{maValue}}' style='width:260rpx;'></input><button class="send" disabled='{{volidate}}' bindtap='sendMa'>{{sendContent}}</button>
+    </view>
+  </view>
+  <view>
+    <button class='submit' disabled='{{isMa}}' bindtap='modifySuccess'>确定</button>
+  </view>
+</view>
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/> 

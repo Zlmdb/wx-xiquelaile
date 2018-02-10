@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/checkinfo/checkinfo",
+    "pages/storeDistribution/storeDistribution",
+    "pages/personalCenter/personalCenter",
+    "pages/time/time",
+    "pages/orderDetail/orderDetail",
+    "pages/order/order",
+    "pages/craftsman/craftsman",
+    "pages/craftsmantime/craftsmantime",
+    "pages/addAppoint/addAppoint",
+    "pages/modifyPhone/modifyPhone",
+    "pages/login/login",
+    "pages/success/success"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fd9595",
+    "navigationBarTitleText": "静博士",
+    "navigationBarTextStyle": "#fff",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#999",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#fd9595",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "预约",
+        "iconPath": "image/appoint.png",
+        "selectedIconPath": "image/appointselected.png"
+      },
+      {
+        "pagePath": "pages/personalCenter/personalCenter",
+        "text": "我的",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/myselected.png"
+      }
+    ]
+  }
+}

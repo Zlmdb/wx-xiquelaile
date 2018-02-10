@@ -1,0 +1,124 @@
+@import "../../utils/commonConfirm.wxss";
+.people{
+  position: relative;
+}
+.img{
+  position: absolute;
+  right: 0;
+  bottom:2px;
+}
+.img image{
+  border-radius: 50%;
+} 
+
+.itemClickTpl{
+  box-sizing: border-box;
+  width:300px;
+  margin:0 auto;
+  height:110px;
+   border-bottom: 1px solid #eee; 
+}
+.centerTpl{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+.nameTpl{
+  position:relative;
+}
+.name1Tpl{
+  font-size:40rpx;
+  color:#fd9595;
+}
+
+.name2Tpl{
+  font-size:40rpx;
+  color:#333;
+  vertical-align: middle;
+}
+.name2Tp2{
+  font-size:32rpx;
+  color:#b1b1b1;
+  margin-top: 40rpx;
+}
+.storeTpl{
+  font-size:14px;
+  color:#b1b1b1;
+  border-right:1px solid #eee;
+  padding-right:5px;
+}
+.distanceTpl{
+  font-size:14px;
+  color:#b1b1b1;
+  /* border-right:1px solid #eee; */
+  padding-left:5px;
+}
+.centerImg{
+  position: absolute;
+  width:70px;
+  height:70px;
+  bottom:0;
+  left:0;
+}
+.centerImg image{
+  border-radius: 50%;
+  width:100%;
+  height:100%;
+  border:1px solid #e8e8e8;
+  background-color:#eee;
+}
+ .marLeft{
+  margin-left: 90px;
+}
+.craftManBack{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform: translateY(-50%);
+  /* float:right; */
+  vertical-align: middle;
+  width:10px;
+  height:15px;
+}
+.department{
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 120px;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:32rpx;
+}
+.middle{
+  display: inline-block;
+  vertical-align: middle;
+  font-size:32rpx;
+}
+
+/* 已满样式 */
+.kongCon{
+  margin-top:250rpx;
+  text-align: center;
+}
+.kongImg{
+  width:200rpx;
+  height:200rpx;
+}
+.kong{
+  color:#999;
+  font-size: 32rpx;
+  padding-top:70rpx;
+}
+.konggoback{
+  text-align: center;
+  font-size:30rpx;
+  color:#fff;
+  background-color: #fd9595;
+  border-radius: 8rpx;
+  width:200rpx;
+  height:66rpx;
+  line-height:66rpx;
+  margin:0 auto;
+  margin-top:80rpx;
+}
+

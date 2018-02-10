@@ -1,0 +1,13 @@
+<view class="toast_mask" wx:if="{{isShowToast}}">
+  <!--以下为toast显示的内容-->  
+  <view class="toast_content_box" wx:if="{{isShowToast}}">  
+    <view class="toast_content">  
+      <view class="toast_content_text">  
+        {{toastText}}  
+      </view>  
+      <view class='toast_content_button' wx:if="{{isShowToastButton}}">
+        <text class='toast_content_button1' bindtap='buttonConfirm'>确定</text><text bindtap='toAgainLogin' class='toast_content_button2'>去登陆</text>
+      </view> 
+    </view>  
+  </view>  
+</view>  

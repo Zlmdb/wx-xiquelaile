@@ -1,0 +1,77 @@
+@import "../../utils/commonConfirm.wxss";
+.people{
+  position: relative;
+}
+.img{
+  position: absolute;
+  right: 0;
+  bottom:2px;
+}
+.img image{
+  border-radius: 50%;
+} 
+
+.itemClickTpl{
+  box-sizing: border-box;
+  width:300px;
+  margin:0 auto;
+  height:110px;
+  /* border-bottom: 1px solid #eee; */
+}
+.centerTpl{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+.nameTpl{
+  position:relative;
+}
+.name1Tpl{
+  font-size:20px;
+  color:#fd9595;
+}
+.name2Tpl{
+  font-size:20px;
+  color:#333;
+  vertical-align: middle;
+}
+.storeTpl{
+  font-size:14px;
+  color:#b1b1b1;
+  border-right:1px solid #eee;
+  padding-right:5px;
+}
+.distanceTpl{
+  font-size:14px;
+  color:#b1b1b1;
+  /* border-right:1px solid #eee; */
+  padding-left:5px;
+}
+.centerImg{
+  position: absolute;
+  width:70px;
+  height:70px;
+  bottom:-25px;
+  left:0;
+}
+.centerImg image{
+  border-radius: 50%;
+  width:100%;
+  height:100%;
+  border:1px solid #e8e8e8;
+  background-color:#eee;
+}
+ .marLeft{
+  margin-left: 90px;
+}
+.craftManBack{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform: translateY(-50%);
+  /* float:right; */
+  vertical-align: middle;
+  width:10px;
+  height:15px;
+}
+

@@ -1,0 +1,98 @@
+<view style='background-color:#f5f5f5'>
+<!-- 门店块 -->
+  <view class='store'>
+      <view class='up'>
+        <text class='storeLable'>门店：</text>
+        <text class='storeTittle'>{{recordData.departmentName}}</text>
+      </view>
+      <view class='down' bindtap='toWhere'  data-longitude="{{recordData.longitude}}" data-latitude="{{recordData.latitude}}" data-name="{{recordData.departmentName}}" data-address="{{recordData.address}}">
+        <!-- <text class='address'>{{recordData.province+'  '+recordData.city+'  '+recordData.district+'  '+recordData.address}}</text> -->
+        <text class='address'>
+          <text wx:if="{{recordData.province}}">{{recordData.province+'  '}}</text>
+          <text wx:if="{{recordData.city}}">{{recordData.city+'  '}}</text>
+          <text wx:if="{{recordData.district}}">{{recordData.district+'  '}}</text>
+          <text wx:if="{{recordData.address}}">{{recordData.address}}</text>
+        </text>
+         <image wx:if="{{recordData.province||recordData.city||recordData.district||recordData.address}}" src='../../image/go.png' class='goPng'></image> 
+      </view>
+  </view>
+  <!-- 详情块 -->
+  <view class='detail'>
+    <view class='detailItem'><text class='detailLable'>预约人:</text><text class='detailValue'>{{recordData.maxname?recordData.maxname:recordData.customerName}}</text></view>
+    <view class='detailItem'><text class='detailLable'>预约时间:</text><text class='detailValue'>{{recordData.date}}</text><text class='detailValueTime'>{{recordData.serviceStartTime}}</text></view>
+    <view class='detailItem'>
+      <text class='detailLable'>手艺人:</text>
+      <!-- 两种情况，beauticianList，当status =2 时才有,表示消费服务人员列表,当列表为空时，取userId表示手艺人;否则取该列表的值表示手艺人 -->
+      <block wx:if="{{isArray}}">
+        <text class='detailValue' wx:for="{{recordData.beauticianList}}" >{{item.username}}</text>
+      </block>
+       <text wx:else class='detailValue'>{{recordData.userName}}</text> 
+    </view>
+    <view class='detailItem'><text class='detailLable'>状态:</text><text class='detailValue'>{{recordData.statusName}}</text></view>
+    <view class='detailItem'><text class='detailLable'>订单号:</text><text class='detailValue'>{{recordData.serviceCode}}</text><text class='detailValueCopy' bindtap='setClipboard' wx:if="{{recordData.serviceCode}}">复制</text></view>
+  </view>
+  <!-- 未评价块 -->
+  <view class='evaluate' wx:if="{{status==2&&recordData.isEvaluate==='n'&&recordData.isOther===0}}">
+    <view class='evaluateTitle'>
+      <text>服务评价</text>
+    </view>
+    <view class='evaluateStars'>
+      <view class='star'><image mode="widthFix" src='../../image/evaluated.png'></image></view>
+      <view class='star'><image mode="widthFix" src="{{img2?'../../image/evaluate.png':'../../image/evaluated.png'}}" bindtap='handleToggle2'></image></view>
+      <view class='star'><image mode="widthFix" src="{{img3?'../../image/evaluate.png':'../../image/evaluated.png'}}" bindtap='handleToggle3'></image></view>
+      <view class='star'><image mode="widthFix" src="{{img4?'../../image/evaluate.png':'../../image/evaluated.png'}}" bindtap='handleToggle4'></image></view>
+      <view class='star starLatest'><image mode="widthFix" src="{{img5?'../../image/evaluate.png':'../../image/evaluated.png'}}" bindtap='handleToggle5'></image></view>
+    </view>
+    <view class='evaluateItem'>
+      <!-- <text class="itemCell {{bg1?'bgColor':''}}" bindtap='handleBg1'>手法专业</text>-->
+      <!-- 这里的{{bg[item.evaluateLableId]?'bgColor':''}}，考虑到bg必须是data里面要初始化的数据，同时随着循环要不断改变bg的值，为了满足这两个条件，所以bg得是一个对象，所以给data里面初始化一个空的bg对象，在页面初始化的时候，给bg填充{1:false,3:true}这样的值 -->
+      <text class="itemCell {{bg[item.evaluateLableId]?'bgColor':''}}" bindtap='handleBg' wx:for="{{recordData.evaluateLableList}}" data-str='{{item.evaluateLableId}}'>{{item.evaluateLable}}</text>
+    </view>
+    <view class="checkbox">
+      <label>
+        <checkbox class='target' value="" checked="{{isAnonymous}}" bindtap='anonymous'/><text class="{{isAnonymous?'textColor':''}}">匿名评价</text> 
+      </label>
+    </view>
+  </view>
+  <!-- 已评价块 -->
+  <view class='evaluate' wx:if="{{status==2&&recordData.isEvaluate==='y'}}">
+    <view class='evaluateTitle'>
+      <text>服务评价</text><text style='color:#999;font-size:28rpx' wx:if="{{recordData.isAnonymous==='y'}}">(匿名评价)</text>
+    </view>
+    <view class='evaluateStars'>
+      <view class='star' wx:for="{{recordData.evaluateScore}}"><image mode="widthFix" src='../../image/evaluated.png'></image></view>
+    </view>
+    <view class='evaluateItem'>
+      <text class="itemCell bgColor"  wx:for="{{recordData.evaluatDepartLableVOList}}">{{item.evaluateLable}}</text>
+      <text class="itemCell bgColor"  wx:for="{{recordData.evaluatUserLableVOList}}">{{item.evaluateLable}}</text>
+    </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view class='submit' wx:if="{{status==2&&recordData.isEvaluate==='n'&&recordData.isOther===0}}">
+    <button class='submitButton' disabled="{{!img1||!img2||!img3||!img4||!img5||bg1||bg2||bg3||bg4||bg5?false:true}}" bindtap='submitEvevate' >提交</button>
+  </view>
+  <!-- 取消预约按钮 -->
+  <view style='padding-top:40rpx' class='submit' wx:if="{{status==1}}">
+    <button  class='submitButton' bindtap='submitEvevate' bindtap='showModal' disabled="{{cancelDisabled}}">取消预约</button>
+  </view>
+  
+</view>
+
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/>
+<!-- 点击取消预约出来的模态框 -->
+<view class="cancel_toast_mask" wx:if="{{cancelMask}}">
+  <view class="cancel_toast_content_box">  
+    <view class="cancel_toast_content">  
+      <view class="cancel_toast_content-text">
+        <view class="cancel_toast_content_text1">提示</view>
+        <view class="cancel_toast_content_text2">你确定取消么？</view>  
+      </view>
+      <view class='cancel_toast_content_button'>
+        <text class='cancel_toast_content_button1' bindtap='cancelFail'>取消</text><text bindtap='cancelSuccess' class='cancel_toast_content_button2'>确定</text>
+    </view>
+    </view> 
+     
+  </view>  
+</view>  
+

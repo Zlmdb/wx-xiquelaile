@@ -1,0 +1,154 @@
+<view class="contain">
+  <!-- <view> -->
+    <view class='containInput' wx:if="{{istimetocraftman}}">
+      <view class='item'>
+        <view class='people'>
+          <view class="labelText">{{username}}</view>
+          <view class="indexInput">{{departmentName}}</view>
+          <!-- 前提是有姓名才有图像 -->
+          <view class='img' wx:if="{{username}}">
+            <image style="width: 70px; height: 70px;background-color:#eee" mode="aspectFit" src="{{avatarapp!=='undefined'&&avatarapp!=='null'?avatarapp:'../../image/login.png'}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 联动 -->
+     <view class='linkage {{isFix?"changeFix":""}}'>
+      <view class='gun'>
+        <view class='timeCon'><text class='month'>{{month}}月</text><text class='year'>{{year}}</text></view>
+        <scroll-view class='swiper' scroll-x="true">
+         
+          <view data-num='1' data-ymd='{{day.year}}'  class= "swiperCell {{_num=='1'?'swiperCellActive':''}}" bindtap='timeSelected'>
+           <view class='cellCon'>
+              <view class='dateItem'>{{day.day}}</view>
+            <view class='weekItem'>{{day.week}}</view>
+            </view>
+            
+          </view>
+          <view data-num='2' data-ymd='{{dateObj.one.year}}'  class= "swiperCell {{_num=='2'?'swiperCellActive':''}}" bindtap='timeSelected'>
+          <view class='cellCon'>
+            <view class='dateItem'>{{dateObj.one.day}}</view>
+            <view class='weekItem'>{{dateObj.one.week}}</view>
+          </view>
+          </view>
+          <view data-num='3' data-ymd='{{dateObj.two.year}}'  class= "swiperCell {{_num=='3'?'swiperCellActive':''}}" bindtap='timeSelected'>
+            <view class='cellCon'>
+            <view class='dateItem'>{{dateObj.two.day}}</view>
+            <view class='weekItem'>{{dateObj.two.week}}</view>
+          </view>
+          </view>
+          <view data-num='4' data-ymd='{{dateObj.three.year}}'  class= "swiperCell {{_num=='4'?'swiperCellActive':''}}" bindtap='timeSelected'>
+             <view class='cellCon'>
+            <view class='dateItem'>{{dateObj.three.day}}</view>
+            <view class='weekItem'>{{dateObj.three.week}}</view>
+          </view>
+          </view>
+          <view data-num='5' data-ymd='{{dateObj.forth.year}}'  class= "swiperCell {{_num=='5'?'swiperCellActive':''}}" bindtap='timeSelected'>
+             <view class='cellCon'>
+              <view class='dateItem'>{{dateObj.forth.day}}</view>
+              <view class='weekItem'>{{dateObj.forth.week}}</view>
+            </view>
+          </view>
+          <view data-num='6' data-ymd='{{dateObj.five.year}}'  class= "swiperCell {{_num=='6'?'swiperCellActive':''}}" bindtap='timeSelected'>
+            <view class='cellCon'>
+              <view class='dateItem'>{{dateObj.five.day}}</view>
+              <view class='weekItem'>{{dateObj.five.week}}</view>
+            </view>
+          </view>
+          <view data-num='7' data-ymd='{{dateObj.six.year}}'  class= "swiperCell {{_num=='7'?'swiperCellActive':''}}" bindtap='timeSelected'>
+            <view class='cellCon'>
+              <view class='dateItem'>{{dateObj.six.day}}</view>
+              <view class='weekItem'>{{dateObj.six.week}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <view class='timeText'>选择服务时间段</view>
+    </view> 
+    <!-- 选择时间段 -->
+    <view class='scrollTimeCon {{isFix?"addMargin":""}}'>
+      
+      <!-- <scroll-view scroll-y="{{isScroll}}"  class='scrollTimeCellCon'> -->
+      <view class='scrollTimeCellCon' wx:if="{{isOk}}">
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[4]?'changeActive':''}} {{isActive[4]?'scrollTimeCellAc':''}}" data-num='4'>
+            09:30
+          </view>
+           <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[5]?'changeActive':''}} {{isActive[5]?'scrollTimeCellAc':''}}" data-num='5'>
+            10:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[6]?'changeActive':''}} {{isActive[6]?'scrollTimeCellAc':''}}" data-num='6'>
+            10:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[7]?'changeActive':''}} {{isActive[7]?'scrollTimeCellAc':''}}" data-num='7'>
+            11:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[8]?'changeActive':''}} {{isActive[8]?'scrollTimeCellAc':''}}" data-num='8'>
+            11:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[9]?'changeActive':''}} {{isActive[9]?'scrollTimeCellAc':''}}" data-num='9'>
+            12:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[10]?'changeActive':''}} {{isActive[10]?'scrollTimeCellAc':''}}" data-num='10'>
+            12:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[11]?'changeActive':''}} {{isActive[11]?'scrollTimeCellAc':''}}" data-num='11'>
+            13:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[12]?'changeActive':''}} {{isActive[12]?'scrollTimeCellAc':''}}" data-num='12'>
+            13:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[13]?'changeActive':''}} {{isActive[13]?'scrollTimeCellAc':''}}" data-num='13'>
+            14:00
+          </view>
+           <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[14]?'changeActive':''}} {{isActive[14]?'scrollTimeCellAc':''}}" data-num='14'>
+            14:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[15]?'changeActive':''}} {{isActive[15]?'scrollTimeCellAc':''}}" data-num='15'>
+            15:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[16]?'changeActive':''}} {{isActive[16]?'scrollTimeCellAc':''}}" data-num='16'>
+            15:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[17]?'changeActive':''}} {{isActive[17]?'scrollTimeCellAc':''}}" data-num='17'>
+            16:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[18]?'changeActive':''}} {{isActive[18]?'scrollTimeCellAc':''}}" data-num='18'>
+            16:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[19]?'changeActive':''}} {{isActive[19]?'scrollTimeCellAc':''}}" data-num='19'>
+            17:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[20]?'changeActive':''}} {{isActive[20]?'scrollTimeCellAc':''}}" data-num='20'>
+            17:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[21]?'changeActive':''}} {{isActive[21]?'scrollTimeCellAc':''}}" data-num='21'>
+            18:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[22]?'changeActive':''}} {{isActive[22]?'scrollTimeCellAc':''}}" data-num='22'>
+            18:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[23]?'changeActive':''}} {{isActive[23]?'scrollTimeCellAc':''}}" data-num='23'>
+            19:00
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[24]?'changeActive':''}} {{isActive[24]?'scrollTimeCellAc':''}}" data-num='24'>
+            19:30
+          </view>
+          <view bindtap='changeActive' class="scrollTimeCell {{isToggleX[25]?'changeActive':''}} {{isActive[25]?'scrollTimeCellAc':''}}" data-num='25'>
+            20:00
+          </view>
+        </view>
+      <!-- </scroll-view> -->
+      <view class='kongCon' wx:else>
+        <image class='kongImg' src='../../image/kongpaiban.png'></image>
+        <view class='kong'>抱歉，已经约满了，换个时间吧!</view>
+      </view>
+    </view>
+  <!-- </scroll-view> -->
+  </view>
+  <view class='button'>
+        <button class='success' disabled='{{isclick}}' hover-class="clickSuccess" bindtap='toPages'>确定</button>
+  </view>
+
+  <!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/>
+

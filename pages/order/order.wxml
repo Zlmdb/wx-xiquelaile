@@ -1,0 +1,24 @@
+
+<view>
+  <view class='tabTop'>
+    <text data-status='1' class="changeBlock {{status=='1'?'swiperCellActive':''}}" bindtap='timeSelected'>待服务</text>
+    <text data-status='2' class="changeBlock {{status=='2'?'swiperCellActive':''}}" bindtap='timeSelected'>服务完成</text>
+    <text data-status='3' class="changeBlock {{status=='3'?'swiperCellActive':''}}" bindtap='timeSelected'>服务取消</text>
+  </view>
+  <view class='list'>
+     <!-- <block wx:for="{{listData}}">  -->
+     <!-- <template is='{{_num}}'></template> -->
+    <view class='listItem' wx:for="{{listData}}" data-id="{{item.id}}" data-status="{{status}}" bindtap='oneClick'>
+      <view class='up'>
+        <text class='date'>{{item.date}}</text><text class='week'>({{item.week}})</text><text class='time'>{{item.serviceStartTime}}</text><text class='noon'>({{item.timePart}})</text>
+      </view>
+      <view class='down'>
+        {{item.departmentName}}<text class='evaluate' wx:if="{{item.isEvaluate==='n'&&item.isOther===0?true:false}}">去评价</text>
+      </view>
+    </view> 
+     <!-- </block>  -->
+  </view>
+</view>
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/> 
+

@@ -1,0 +1,60 @@
+<view style='background-color:#f5f5f5;overflow:hidden'>
+<!-- 头像及姓名电话 -->
+  <view class='personName'>
+    <view class='nameCenter'>
+       <view class='virtualName' bindtap='tologin' wx:if='{{isLogin}}'>请登录</view>  
+      <view wx:else>
+        <view class='actualName' >{{maxname?maxname:customInfo.name}}</view> 
+        <view class='phone' bindtap='toModifyPhone'>{{customInfo.mobile}}</view>
+      </view>
+    </view>
+    <view class='loginPicture'>
+      <image mode='widthFix' src='{{avatarUrl}}'></image>
+    </view>
+  </view>
+  <!-- 三栏项 -->
+  <view class='operation'>
+    <view class='operationItem' bindtap="toOrder" style='border-bottom:1px solid #eee;'>
+      <view class='operationCenter'>
+        <view class='checkIcon'>
+          <image mode='widthFix' src='../../image/checkOrder.png'></image>
+        </view>
+        <view class='checkText'>查看订单</view>
+        <image class='checkBack' mode='aspectFit' src='../../image/personalBack.png'></image>
+      </view>
+    </view>
+    <view class='operationItem' style='margin-bottom:20rpx' bindtap='tostoreDistribution'>
+      <view class='operationCenter'>
+        <view class='checkIcon'>
+          <image mode='widthFix' src='../../image/bar.png'></image>
+        </view>
+        <view class='checkText'>门店导航</view>
+        <image class='checkBack' mode='aspectFit' src='../../image/personalBack.png'></image>
+      </view>
+    </view>
+    <view class='operationItem' bindtap='makePhoneCall'>
+      <view class='operationCenter'>
+        <view class='checkIcon'>
+          <image mode='widthFix' src='../../image/callMe.png'></image>
+        </view>
+        <view class='checkText'>联系客服</view>
+        <image class='checkBack' mode='aspectFit' src='../../image/personalBack.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 预留空隙 -->
+  <view class='reserve'>
+    <view class='reservelogo'>
+      <view>
+        <image mode='widthFix' src='../../image/log.png' style='width:50px;height:50px;'></image>
+      </view>
+       <view>
+        <image mode='widthFix' src='../../image/sheme.png' style='width:50px;height:50px;'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--mask-->
+<include src="../../utils/commonConfirm.wxml"/>   
+

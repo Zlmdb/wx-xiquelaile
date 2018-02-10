@@ -1,0 +1,24 @@
+<template name="peoplelistPage">
+  <view class='itemClickTpl' data-id='{{item.id}}' data-avatarapp='{{item.avatarapp}}' data-username='{{item.username}}' bindtap='selectClickPeople'>
+    <view class='centerTpl'>
+      <view class='marLeft'>
+        <view class='nameTpl'>
+          <text class='name2Tpl'>{{item.username}}</text>
+          <image class='craftManBack' src='../../image/craftManBack.png'></image>
+        </view>
+        <!-- <view><text class='storeTpl'>西湖银泰店</text> <text class='distanceTpl'>2.6公里</text> </view> -->
+      </view>
+      <view class='centerImg'><image src="{{item.avatarapp||'../../image/login.png'}}"></image></view>
+    </view>
+  </view>
+</template>
+
+
+<view>
+  <block wx:for="{{craftData}}">
+    <template is="peoplelistPage" data="{{item}}"/>
+  </block>
+</view>
+
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/>

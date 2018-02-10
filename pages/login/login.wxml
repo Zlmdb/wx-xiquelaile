@@ -1,0 +1,20 @@
+
+
+<view style='padding-top:180rpx;'>
+    <view>
+      <view class='inputContain'>
+          <label class='lableName'>称呼:</label><input placeholder-class="phcolor" class='nameEntry' type='text' placeholder='请输入姓名' bindinput='acceptName' value='{{nameValue}}'></input>
+      </view>
+      <view class='inputContain'>
+          <label class='lableName'>手机号:</label><input placeholder-class="phcolor" class='nameEntry' type='number' placeholder='请输入手机号' bindinput='acceptPhone' value='{{phoneValue}}'></input>
+      </view>
+      <view class='inputContain' style='position:relative'>
+          <label class='lableName'>验证码:</label><input placeholder-class="phcolor" class='nameEntry' type='number' placeholder='请输入四位验证码' value='{{maValue}}' bindinput='acceptValidate' ></input><button class="send" disabled='{{volidate}}' bindtap='sendMa'>{{sendContent}}</button>
+      </view>
+    </view>
+    <view style='margin-top:110rpx'>
+      <button class='submit' disabled="{{isMa}}" bindtap='modifySuccess'>确定</button>
+    </view>
+</view>
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/> 

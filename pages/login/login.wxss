@@ -1,0 +1,57 @@
+@import "../../utils/commonConfirm.wxss";
+.inputContain{
+  /* padding:0 84rpx; */
+  width:580rpx;
+  margin:0 auto;
+  margin-bottom: 70rpx;
+}
+.lableName{
+  display: inline-block;
+  color:#666;
+  font-size:36rpx;
+  width:140rpx;
+  vertical-align: middle;
+}
+.nameEntry{
+  box-sizing: border-box;
+  width:440rpx;
+  padding-left:20rpx;
+  border-bottom:1px solid #eee;
+  display: inline-block;
+  vertical-align: middle;
+}
+.phcolor{
+  color:#b1b1b1;
+  font-size:28rpx;
+}
+.submit{
+  width:690rpx;
+  height:94rpx;
+  line-height:94rpx;
+  background-color: #fd9595;
+  text-align: center;
+  font-size:36rpx;
+  color:#fff;
+}
+.send{
+  position: absolute;
+  bottom:10rpx;
+  right:0;
+  z-index: 10000;
+  width:160rpx;
+  height:80rpx;
+   padding-left:0!important; 
+   padding-right:0!important; 
+  line-height: 80rpx;
+  color:#fff;
+  font-size:28rpx;
+  background-color: #fd9595;
+}
+button[disabled]{
+  color:#fff!important;
+  background-color: #fd9595!important;
+  opacity:0.6; 
+}
+
+
+

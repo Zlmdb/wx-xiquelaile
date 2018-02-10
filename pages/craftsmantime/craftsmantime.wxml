@@ -1,0 +1,34 @@
+<template name="peoplelistPage">
+  <view class='itemClickTpl' data-id='{{item.userId}}' data-scheduleid='{{item.scheduleId}}' data-username='{{item.username}}' bindtap='selectClickPeople'>
+    <view class='centerTpl'>
+      <view class='marLeft'>
+        <view class='nameTpl'>
+          <view class='name2Tpl'>{{item.username}}</view>
+          <view class='name2Tp2'>
+            <text class='department'>{{item.department_name}}</text>
+            <text class='middle' style='margin:0 10rpx'>,</text>
+            <text class='middle' wx:if="{{(item.distance||item.distance==0)&&item.distance>1000}}">约{{(item.distanceChange)}}公里</text>
+            <text class='middle' wx:elif="{{item.distance||item.distance==0}}">约{{item.distance}}米</text>
+          </view>
+          <image class='craftManBack' src='../../image/craftManBack.png'></image>
+        </view>
+      </view>
+      <view class='centerImg'><image src="{{item.head||'../../image/login.png'}}"></image></view>
+    </view>
+  </view>
+</template>
+
+
+<view wx:if="{{isOk}}">
+  <block wx:for="{{craftData}}">
+    <template is="peoplelistPage" data="{{item}}"/>
+  </block>
+</view>
+<view class='kongCon' wx:else>
+  <image class='kongImg' src='../../image/kongpaiban.png'></image>
+  <view class='kong'>美容师都被约完了，换个时间吧!</view>
+  <view class='konggoback' bindtap='toTime'>去换时间</view>
+</view>
+
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/>

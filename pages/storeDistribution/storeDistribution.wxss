@@ -1,0 +1,121 @@
+@import "../../utils/commonConfirm.wxss";
+.contain{
+  padding-top:212rpx;
+   width:640rpx; 
+  /* width:70vw; */
+  margin:0 auto;
+}
+.item{
+  padding-bottom:60rpx;
+  margin-bottom:60rpx;
+  border-bottom:1px solid #eee;
+}
+.up{
+  margin-bottom:50rpx;
+}
+.up:after{
+  content:" ";
+  display: block;
+  clear:both;
+}
+.store{
+  font-size:40rpx;
+  color:#333;
+  float:left;
+}
+.distance{
+  font-size:36rpx;
+  color:#b1b1b1;
+   float:right;
+}
+.down{
+  font-size:28rpx;
+  color:#b1b1b1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: relative;
+  padding-right:40rpx;
+}
+.goPng{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  right:0;
+  width:35rpx;
+  height:41rpx;
+}
+.down text{
+  width:400rpx;
+  margin-right: 16rpx;
+}
+.offtenGo{
+  float:left;
+  margin-left: 20rpx;
+  background-color: #fedbdb;
+  color:#c94242;
+  font-size:24rpx;
+  width:88rpx;
+  height:40rpx;
+  line-height:40rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  margin-top: 8rpx;
+}
+
+
+.search{
+  position:relative;  
+  width:640rpx;
+  padding-top:60rpx;
+  padding-bottom:40rpx;
+  margin:0 auto;
+  margin-bottom: 40rpx;
+  background-color: #fff;
+}
+/* 搜索输入框字体大小 */
+.search input{
+  box-sizing: border-box;
+  width:100%;
+  height:80rpx;
+  border-bottom:1px solid #f1f1f1;
+  /* border-radius: 20rpx; */
+  padding-left: 80rpx;
+  padding-right:40rpx;
+  font-size: 46rpx;
+  color:#b1b1b1;
+}
+.searchCraft{
+  position: absolute;
+  top:50%;
+  transform: translateY(-30%);
+  left:20rpx;
+  width:40rpx;
+  height:40rpx;
+}
+.phcolor{
+  color:#b1b1b1;
+  font-size: 32rpx;
+}
+.changeFixed{
+  position:fixed;
+   z-index: 10000; 
+  /* top:0; */
+   left:50%; 
+   transform:translateX(-50%); 
+}
+
+.kongCon{
+  margin-top:154rpx;
+  text-align: center;
+}
+.kongImg{
+  width:200rpx;
+  height:200rpx;
+}
+.kong{
+  color:#999;
+  font-size: 32rpx;
+  padding-top:70rpx;
+}
+

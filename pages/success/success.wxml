@@ -1,0 +1,7 @@
+<view>
+  <view class='img'>
+    <image src='../../image/success.png' style='width:200rpx;height:200rpx'></image>
+  </view>
+  <view class='success'>预约成功</view>
+  <view class='confirm' bindtap='toOrder'>确定</view>
+</view>

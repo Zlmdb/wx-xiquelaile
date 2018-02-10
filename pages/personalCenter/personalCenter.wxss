@@ -1,0 +1,104 @@
+@import "../../utils/commonConfirm.wxss";
+
+.personName{
+  height:290rpx;
+  padding:60rpx;
+  position: relative;
+  /* border:1px solid #333; */
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.nameCenter{
+  /* padding-left:210rpx; */
+
+  position: absolute;
+  left:270rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.loginPicture{
+  width:170rpx;
+  height:170rpx;
+  /* border-radius: 50%; */
+  /* position: absolute; */
+
+}
+.loginPicture image{
+  width:100%;
+  height:100%;
+  border-radius: 50%;
+}
+.virtualName{
+  color:#333;
+  font-size:40rpx;
+}
+.actualName{
+  color:#333;
+  font-size:40rpx;
+  margin-bottom:40rpx;
+}
+.phone{
+  color:#666;
+  font-size:32rpx;
+}
+.operation{
+  background-color: #f5f5f5;
+  /* padding:60rpx; */
+}
+.operationItem{
+  height:120rpx;
+  padding:0 60rpx;
+  position: relative;
+  background-color: #fff;
+}
+.operationCenter{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:100%;
+
+}
+.operationCenter:after{
+  content:"";
+  display: block;
+  clear:both;
+}
+.checkIcon{
+  float:left;
+  width:38rpx;
+  height:44rpx;
+  margin-right: 40rpx;
+}
+.checkIcon image{
+  width:100%;
+  height:100%;
+}
+.checkText{
+  float:left;
+  font-size:32rpx;
+  color:#333;
+}
+.checkBack{
+  box-sizing: border-box;
+  float:right;
+  width:12rpx;
+  height:24rpx; 
+  margin-right: 120rpx;
+  margin-top:5px;
+  vertical-align: middle;
+  /* border:1px solid #333;    */
+}
+.reserve{
+  background-color: #f5f5f5;
+  padding-top:60rpx;
+  padding-bottom:88rpx;
+  /* height:288rpx; */
+}
+.reservelogo{
+  box-sizing: border-box;
+  height:258rpx;
+  background-color: #fff;
+  padding:60rpx 0;
+  text-align: center;
+}

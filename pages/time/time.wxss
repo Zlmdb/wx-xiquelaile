@@ -1,0 +1,224 @@
+@import "../../utils/commonConfirm.wxss";
+
+/* 门店，守夜人，时间里的字体大小 */
+.containInput{
+  background-color: #fff;
+}
+.indexInput{
+  font-size: 14px;
+  color:#b1b1b1;
+  padding-left: 90px;
+  margin-top:15px;
+}
+.item{
+  width:300px;
+  margin:0 auto;
+  padding:30px 0;
+  border-bottom:1px solid #f1f1f1;
+}
+.labelText{
+  color:#333;
+  padding-left: 90px;
+  font-size: 20px;
+}
+.people{
+  position: relative;
+  /* padding-bottom：30px; */
+}
+.img{
+  position: absolute;
+  left: 0;
+  bottom:-11px;
+}
+.img image{
+  border-radius: 50%;
+}
+
+.linkage{
+  padding-top: 20px;
+  background-color: #fff;
+  width:100%; 
+}
+.gun{
+  width:300px;
+  margin:0 auto;
+   padding-bottom: 20px;
+}
+.timeText{
+  width:300px;
+  margin:0 auto;
+  padding-bottom: 20px;
+  font-size: 14px;
+  color:#b1b1b1;
+}
+.timeCon{
+  margin-bottom:17px;
+}
+.month{
+  color:#b1b1b1;
+  font-size: 16px;
+  margin-right: 20px;
+}
+.year{
+  color:#b1b1b1;
+  font-size: 12px;
+}
+.swiper{
+  /* display: flex; */
+  /* justify-content:space-between; */
+  white-space: nowrap;
+  /* position:relative; */
+}
+.cellCon{
+  position:relative;
+  display:inline-block;
+  top:50%;
+  transform: translateY(-50%);
+}
+.swiperCell{
+  height:60px;
+  /* line-height: 60px; */
+  width:60px;
+  display:inline-block;
+  /* border:1px solid #333; */
+  border-radius:50%;
+  text-align: center; 
+  flex-shrink:0;
+  margin-right:10px;
+
+  
+
+}
+.swiperCell .dateItem{
+  font-size:20px;
+  color:#333;
+}
+.swiperCell .weekItem{
+  font-size:12px;
+  color:#b1b1b1;
+}
+.swiperCellActive{
+  background-color: #fd9595;
+  color:#fff;
+}
+.swiperCellActive .dateItem{
+  color:#fff;
+}
+.swiperCellActive .weekItem{
+  color:#fff;
+}
+
+.scrollTimeCon{
+ 
+  width:300px;
+  margin:0 auto;
+  /* padding-bottom: 50px; */
+  /* margin-bottom: 50px; */
+}
+
+.scrollTimeCellCon{
+  box-sizing: border-box;
+  /* padding-top: 30px; */
+   padding-bottom: 50px; 
+}
+.scrollTimeCell{
+  width:260px;
+  margin:0 auto;
+  height:39px;
+  /* border:1px solid #fdaaaa; */
+  border-radius: 10px;
+  text-align: center;
+  line-height: 39px;
+  font-size: 16px;
+  /* color:#fd9595; */
+  margin-bottom: 15px;
+  border:1px solid #eee; 
+  color:#b1b1b1; 
+   background-color: #f9f9f9;
+}
+.scrollTimeCellAc{
+   border:1px solid #fdaaaa!important; 
+   color:#fd9595; 
+   background-color: #fff;
+}
+.changeActive{
+    width:300px;
+    height:45px;
+    line-height: 45px;
+    background-color: #fd9595;
+    color:#fff;
+}
+.button{
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:50px;
+  text-align: center;
+  line-height: 50px;
+  color:#b1b1b1;
+  font-size: 18px;  
+  border-top:1px solid #f1f1f1;
+  /* background-color: red; */
+}
+.button .success{
+  width:100%;
+  height:49px;
+  line-height:49px;
+  border:0;
+  color:#fd9595;
+  font-size:36rpx;
+  border-radius: 0;
+}
+.clickSuccess{
+  background-color: #fd9595;
+  color:#fff;
+}
+.changeFix{
+  -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+  position: fixed;
+  top:0;
+}
+.changeFixDown{
+  -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+  position: fixed;
+  top:121px!important;
+}
+/* .changeShow{
+  display: block;
+}
+.changeHide{
+  display: none;
+} */
+.addMargin{
+  margin-top: 181px;
+}
+button[disabled]{
+   color:#b1b1b1!important; 
+   font-size:36rpx!important; 
+  /* background-color: #fd9595!important; */
+  /* opacity: 0.6; */
+}
+
+
+
+.kongCon{
+  margin-top:70rpx;
+  text-align: center;
+}
+.kongImg{
+  width:200rpx;
+  height:200rpx;
+}
+.kong{
+  color:#999;
+  font-size: 32rpx;
+  padding-top:70rpx;
+}

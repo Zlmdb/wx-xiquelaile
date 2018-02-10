@@ -1,0 +1,102 @@
+
+
+
+<!-- 搜索手艺人模板 -->
+<template name="peoplelist">
+<!-- <view style='position:relative;z-index:10000'> -->
+  <!-- <view class='addPadding'> -->
+    <view class='itemTpl'  bindtap='selectSearchPeople' data-id='{{item.id}}' data-avatarapp='{{item.avatarapp}}' data-username='{{item.username}}' data-departmentname='{{item.departmentName}}'>
+      <view class='centerTpl'>
+        <view class='marLeft'>
+          <!-- <view class='nameTpl'><text class='name1Tpl'>张</text><text class='name2Tpl'>与</text></view> -->
+          <view class='nameTpl'><text class='name2Tpl'>{{item.username}}</text></view>
+          <view><text class='storeTpl'>{{item.departmentName}}</text><text wx:if="{{item.distance||item.distance==0}}" style='color:#999'>|</text><text class='distanceTpl' wx:if="{{item.distance||item.distance==0}}">约{{item.distance}}公里</text> </view>
+        </view>
+        <view class='centerImg'><image src="{{item.avatarapp||'../../image/login.png'}}"></image></view>
+      </view>
+    </view>
+  <!-- </view> -->
+  <!-- </view> -->
+</template>
+<!-- 点击手艺人模板 -->
+<!-- <template name="peoplelistPage">
+  <view class='itemClickTpl' bindtap='selectClickPeople'>
+    <view class='centerTpl'>
+      <view class='marLeft'>
+        <view class='nameTpl'><text class='name2Tpl'>李</text><text class='name2Tpl'>大大大</text></view>
+        <view><text class='storeTpl'>西湖银泰店</text> <text class='distanceTpl'>2.6公里</text> </view>
+      </view>
+      <view class='centerImg'><image src="../../image/peopleLogo.png"></image></view>
+    </view>
+  </view>
+</template> -->
+
+
+
+<form>
+  <view class="contain">
+     <!-- 三个输入框 -->
+    <view class="containInput">
+        <view class="search {{isShow?'':'changeFixed'}}">
+            <input  placeholder='搜索手艺人' placeholder-class="phcolor" bindfocus="handlefocus" bindblur="handleblur" bindinput='handleInput' value="{{name}}"></input>
+            <image class='searchCraft' src='../../image/search.png'></image>
+        </view>
+      
+      <!-- 切换显示与隐藏 -->
+      <view wx:if="{{isShow}}">
+        <view class='item' style='margin-top:0' hover-class="navigatorActive" bindtap='toStore'>
+          <view class="labelText" >门店</view>
+          <view class='indexInput' style='position:relative'>
+            {{startData.department_name}}
+            <view class='nearCon' wx:if="{{near&&degree}}">
+              <image class='near' src='../../image/near.png'></image>最近
+            </view>
+          </view>
+        </view>
+        <view class='item people' hover-class="navigatorActive" bindtap='toPeople'>
+          <view class="labelText">手艺人</view>
+          <view class="indexInput"  wx:if="{{near}}">五星手艺人</view>
+          <view class="indexInput" wx:else>{{startData.username}}</view>  
+           <!-- <view class="indexInput">{{startData.username}}</view>  -->
+          <view class='img'>
+            <!-- 新客 -->
+            <image wx:if="{{near}}" style="width: 70px; height: 70px; background-color: #eeeeee;" mode="aspectFit" src='../../image/new.png'></image>
+            <!-- 老客 -->
+            <image wx:else style="width: 70px; height: 70px; background-color: #eeeeee;" mode="aspectFit" src="{{startData.avatarApp||'../../image/login.png'}}"></image>
+          </view>
+        </view>
+        <view class='item' hover-class="navigatorActive" bindtap='toTime'>
+          <view class="labelText">时间</view>
+          <view class="indexInput">
+            <text class='date'>{{startData.date}}</text><text class='week' wx:if="{{startData.week}}">({{startData.week}})</text><text class='hour'>{{startData.startTime}}</text><text class='noon' wx:if="{{startData.noon}}">({{startData.noon}})</text>
+          </view>
+        </view>
+        <!-- button按钮 -->
+        <view class="yueButton">
+          <button bindtap='toCheckinfo' disabled='{{disabled}}'>马上预约</button>
+        </view>
+      </view>
+      <!-- 切换搜索手艺人模板显示与隐藏 -->
+      <view class='addPadding' wx:else>
+           <block wx:for="{{searchData}}">
+              <template is="peoplelist" data="{{item}}"/>
+          </block>
+          <view class='kongCon' wx:if="{{kong}}">
+            <image class='kongImg' src='../../image/kong.png'></image>
+            <view class='kong'>抱歉，没有找到相关手艺人</view>
+          </view>
+      </view>
+     
+    </view>
+    
+  </view>
+</form>
+<!-- <view>
+  <block wx:for="{{[1, 2, 3, 4, 5,6,7,8,9]}}" wx:if="{{isPeopleShow}}">
+    <template is="peoplelistPage" data=""/>
+  </block>
+</view> -->
+
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/>
+

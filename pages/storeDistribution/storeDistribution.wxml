@@ -1,0 +1,28 @@
+<view>
+  <view class="search changeFixed">
+            <input  placeholder='搜索门店' placeholder-class="phcolor" bindfocus="handlefocus" bindblur="handleblur" bindinput='handleInput' value="{{name}}"></input>
+            <image class='searchCraft' src='../../image/search.png'></image>
+  </view>
+  <view class="contain">
+     <view class='item'  wx:for="{{stopRecord}}" bindtap='tocraftsmanOrMap' data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-name="{{item.name}}" data-address="{{item.address}}" data-department='{{item.id}}'>
+      <view class='up'>
+        <text class='store'>{{item.name}}</text><text wx:if="{{item.offten}}" class='offtenGo'>常去</text> 
+        <text class='distance' wx:if="{{(item.distance||item.distance==0)&&item.distance>=1000}}">约{{item.distanceChange}}公里</text>
+        <text class='distance' wx:elif="{{item.distance||item.distance==0}}">约{{item.distance}}米</text>
+      </view>
+      <view class='down'>
+        <!-- <text class='down1'>{{item.province}}</text>
+        <text class='down1'>{{item.city}}</text>
+        <text class='down2'>{{item.district}}</text> -->
+        <text class='down3'>{{item.address}}</text><image wx:if="{{fromWhere==='false'}}" src='../../image/go.png' class='goPng'></image>
+      </view> 
+    </view>
+    <view wx:if="{{isBottom}}" style='height:50px;line-height:50px;text-align:center;background-color:#fff;color:#b1b1b1;font-size:16px'>已经到底了</view>
+  </view>
+  <view class='kongCon' wx:if="{{kong}}">
+    <image class='kongImg' src='../../image/kong.png'></image>
+    <view class='kong'>抱歉，没有找到相关门店</view>
+  </view>
+</view>
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/> 

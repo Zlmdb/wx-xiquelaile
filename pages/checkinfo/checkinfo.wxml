@@ -1,0 +1,48 @@
+
+
+<view style='padding-top:180rpx;'>
+    <view>
+      <view class='inputContain'>
+          <label class='lableName'>姓名:</label><input placeholder-class="phcolor" class='nameEntry' type='text' placeholder='请输入姓名' bindinput='acceptName' disabled value='{{nameValue.length>4?maxnameValue:nameValue}}'></input>
+      </view>
+      <view class='inputContain'>
+          <label class='lableName'>手机号:</label><input placeholder-class="phcolor" class='nameEntry' type='number' placeholder='请输入手机号' bindinput='acceptPhone' disabled value='{{phoneValue}}'></input>
+      </view>
+    </view>
+    <view style='margin-top:110rpx'>
+      <button class='submit' disabled='{{confirmDisabled}}'  bindtap='modifySuccess'>确定</button>
+    </view>
+    <view style='margin-top:30rpx'>
+      <button class='replaceMan'  bindtap='modifyPre'>更换预约人</button>
+    </view>
+</view>
+
+<!-- mask -->
+<view class='mask' wx:if="{{isMask}}">
+      <view class='picker' animation="{{animationDataShow}}">
+        <view class='picker-title' bindtap='addAppointMan'> <image class='addPre' src='../../image/addPre.png'></image> 新增预约人</view>
+        
+        <scroll-view  class='indicator' scroll-y style="width: 100%;max-height:510rpx" bindchange="bindChange">
+          <!-- 自己单独出来 -->
+        <view catchtap='selectAppoint'  class='picker-item' data-customerid="{{self.id}}" data-name='{{self.name}}' data-phone='{{self.mobile}}' hover-class="clickClass" hover-stay-time="0">
+              <text class='piName'>{{self.maxname?self.maxname:self.name}}</text>
+              <text class='piPhone'>{{self.mobile}}</text>
+        </view>
+          <!-- 自己单独结束 -->
+            <view catchtap='selectAppoint'  class='picker-item' data-num="{{item.id}}" data-customerid="{{item.customer_id}}" data-name='{{item.customer_real_name}}' data-phone='{{item.customer_phone}}'  wx:for="{{booking}}" wx:key="*this" bindtouchstart='itemStart' bindtouchmove='itemMove' bindtouchend='itemEnd' animation="{{animationDataL[item.id]}}" hover-class="clickClass" hover-stay-time="0">
+              <text class='piName'>{{item.maxname?item.maxname:item.customer_real_name}}</text>
+              <text class='piPhone'>{{item.customer_phone}}</text>
+              <view class='moveR'>
+                <!-- <text class='editPre' data-name='{{item.customer_real_name}}' data-phone='{{item.customer_phone}}' data-id='{{item.id}}'>编辑</text> -->
+                <text class='removePre' data-name='{{item.customer_real_name}}' data-phone='{{item.customer_phone}}' data-id='{{item.id}}' catchtap="detailAppoint">删除</text>
+              </view>
+            </view>
+        </scroll-view>
+        <view class='picker-foot' bindtap='cancel'>取消</view>
+      </view>
+    </view>
+
+
+<!--mask-->  
+<include src="../../utils/commonConfirm.wxml"/>
+

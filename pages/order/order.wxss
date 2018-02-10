@@ -1,0 +1,71 @@
+@import "../../utils/commonConfirm.wxss";
+.tabTop{
+  position:fixed;
+  top:0;
+  left:0;
+  height:100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f5f5f5;
+  font-size:30rpx;
+  color:#333;
+  background-color: #fff;
+}
+.changeBlock{
+  display: inline-block;
+  width:33.33vw; 
+  text-align: center;
+}
+.swiperCellActive{
+  color:#fd9595;
+  border-bottom:2px solid #fd9595;
+}
+.list{
+  width:630rpx;
+  margin:0 auto;
+  margin-top:100rpx;
+}
+.listItem{
+  padding:60rpx 0;
+  box-sizing: border-box;
+  border-bottom:1px solid #f5f5f5;
+}
+.up .date{
+  color:#333;
+  font-size:40rpx;
+  margin-right:20rpx;
+  vertical-align: middle;
+}
+.up .week{
+  color:#b1b1b1;
+  font-size:28rpx;
+  margin-right:60rpx;
+  vertical-align: middle;
+}
+.up .time{
+  color:#333;
+  font-size:40rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.up .noon{
+  color:#b1b1b1;
+  font-size:28rpx;
+  vertical-align: middle;
+}
+.down{
+  color:#333;
+  font-size:40rpx;
+  margin-top:40rpx;
+}
+.evaluate{
+  width:120rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  color:#fd9595;
+  font-size:24rpx;
+  border:1px solid #fd9595;
+  border-radius: 6rpx;
+  text-align: center;
+  float:right;
+}
